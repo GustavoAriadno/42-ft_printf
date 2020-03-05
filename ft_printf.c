@@ -6,7 +6,7 @@
 /*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 18:56:12 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/05 16:08:45 by gariadno         ###   ########.fr       */
+/*   Updated: 2020/03/05 16:39:59 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	ft_huntflags(t_info *info)
 	}
 	flags->width = (info->str[info->i] == '*') ?
 		va_arg(info->args, int) : ft_miniatoi(info);
+	(flags->width < 0) ? flags->minus = 1 : 0;
 	info->i++;
 	while (ft_strchr(DOT, info->str[info->i]))
 		(info->str[info->i++] == DOT) ? flags->dot = 1 : 0;
