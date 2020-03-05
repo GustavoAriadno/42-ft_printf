@@ -6,7 +6,7 @@
 /*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/21 01:34:00 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/03 11:17:11 by gariadno         ###   ########.fr       */
+/*   Updated: 2020/03/04 15:36:52 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 
 # define SPECIFIER "dicspuxX%"
 # define FLAGS "- 0"
+# define DOT "."
+
 
 
 
@@ -30,6 +32,7 @@ typedef struct	s_flags
 	int	width;
 	int	dot;
 	int	asterisk;
+	int	precision;
 	int specifier;
 }				t_flags;
 
@@ -44,5 +47,5 @@ typedef struct	s_info
 int		ft_printf(const char *str, ...);
 char	*ft_strchr(const char *s, int c);
 int		ft_putchar(char c);
-
+int		ft_miniatoi(t_info *info);
 # endif
