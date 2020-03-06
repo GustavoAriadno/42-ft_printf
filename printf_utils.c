@@ -6,7 +6,7 @@
 /*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/29 19:03:47 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/04 16:26:25 by gariadno         ###   ########.fr       */
+/*   Updated: 2020/03/06 10:50:49 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int		ft_miniatoi(t_info *info)
 	{
 		num = (num * 10) + info->str[info->i++] - '0';
 	}
+	info->i--;
 	return (num);
 }
 

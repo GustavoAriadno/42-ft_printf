@@ -6,7 +6,7 @@
 /*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 16:37:00 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/05 16:40:38 by gariadno         ###   ########.fr       */
+/*   Updated: 2020/03/06 12:03:36 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,23 @@ int main()
    printf("|%1s|	\n",	"ABCD");
    
    printf("___________________\n\n");
-*/   
-   printf("|%5c|		\n",  'A');
-   printf("|%-5c|		\n",  'B');
-   printf("|%*c|      \n",  5,'C');
-   printf("|%-*c|      \n",  5,'D');
-   printf("|%*c|      \n",  -5,'D');
+*/
    
+   printf("|%5%|		\n");
+   printf("|%-5%|		\n");
+   printf("|%05%|		\n");
+   printf("|%*%|      \n",  5);
+   printf("|%-*%|      \n",  5);
+   printf("|%*%|        \n",  -5);
    
-   printf("|%05c|      \n",  'X');
+   printf("\n\n");
+
+   printf("|%.80%|		\n");
+   printf("|%-5.20%|		\n");
+   printf("|%%|		\n");
+   
+//   printf("\nlen == %d\n", printf("|%5%|\n"));
+//   printf("|%02c|      \n",  'X');
 
 //   printf("len = %d", ft_printf("abcd\n"));
 //   printf("|%.2147482999d|	\n",	7);

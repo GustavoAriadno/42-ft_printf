@@ -6,7 +6,7 @@
 /*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/21 01:34:00 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/04 15:36:52 by gariadno         ###   ########.fr       */
+/*   Updated: 2020/03/06 11:48:29 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,13 @@
 # include <stdarg.h>
 
 # define SPECIFIER "dicspuxX%"
-# define FLAGS "- 0"
-# define DOT "."
-
-
-
+# define FLAGS "-0"
+# define SPACE ' '
+# define DOT '.'
 
 typedef struct	s_flags
 {
-	int	minus;
-	int	zero;
+	int	flag;
 	int	width;
 	int	dot;
 	int	asterisk;
@@ -48,4 +45,8 @@ int		ft_printf(const char *str, ...);
 char	*ft_strchr(const char *s, int c);
 int		ft_putchar(char c);
 int		ft_miniatoi(t_info *info);
+int		ft_isdigit(int c);
+void	ft_print_c(t_info *info, t_flags *flags);
+void	ft_print_percent(t_info *info, t_flags *flags);
+
 # endif
