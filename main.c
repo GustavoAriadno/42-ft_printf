@@ -6,7 +6,7 @@
 /*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 16:37:00 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/06 12:03:36 by gariadno         ###   ########.fr       */
+/*   Updated: 2020/03/07 15:47:02 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int main()
    
    printf("___________________\n\n");
 */
-   
+/*   
    printf("|%5%|		\n");
    printf("|%-5%|		\n");
    printf("|%05%|		\n");
@@ -66,7 +66,8 @@ int main()
 
    printf("|%.80%|		\n");
    printf("|%-5.20%|		\n");
-   printf("|%%|		\n");
+*/
+//   printf("\nlen == %d\n", ft_printf("|%%|\n"));
    
 //   printf("\nlen == %d\n", printf("|%5%|\n"));
 //   printf("|%02c|      \n",  'X');

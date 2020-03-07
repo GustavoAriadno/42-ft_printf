@@ -6,7 +6,7 @@
 /*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/29 19:03:47 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/06 10:50:49 by gariadno         ###   ########.fr       */
+/*   Updated: 2020/03/07 12:57:39 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,5 @@ char	*ft_strchr(const char *s, int c)
 			return (&str[i]);
 		i++;
 	}
-	if (c == 0)
-		return (&str[i]);
 	return (0);
 }

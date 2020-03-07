@@ -6,16 +6,14 @@
 /*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/21 01:34:00 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/06 11:48:29 by gariadno         ###   ########.fr       */
+/*   Updated: 2020/03/07 16:23:09 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef	FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "stdarg.h"
 # include <unistd.h>
-# include <stdlib.h>
 # include <stdarg.h>
 
 # define SPECIFIER "dicspuxX%"
@@ -48,5 +46,6 @@ int		ft_miniatoi(t_info *info);
 int		ft_isdigit(int c);
 void	ft_print_c(t_info *info, t_flags *flags);
 void	ft_print_percent(t_info *info, t_flags *flags);
+void	ft_print_u(t_info *info, t_flags *flags);
 
 # endif

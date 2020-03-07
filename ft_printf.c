@@ -6,7 +6,7 @@
 /*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 18:56:12 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/06 11:46:31 by gariadno         ###   ########.fr       */
+/*   Updated: 2020/03/07 16:24:34 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,14 @@ void	ft_checktype(char c, t_info *info, t_flags *flags)
 {/*
 	if (c == 'd' || c == 'i')
 		ft_printdi(info, flags);
-	else if (c == 'u')
+*/
+	if (c == 'u')
 		ft_printu(info, flags);
 	else if (c == 'c')
 		ft_printc(info, flags);
+	else if (c == '%')
+		ft_print_c(info, flags);
+/*	
 	else if (c == 's')
 		ft_prints(info, flags);
 	else if (c == 'p')
@@ -30,20 +34,17 @@ void	ft_checktype(char c, t_info *info, t_flags *flags)
 	else if (c == 'X')
 		ft_printX(info, flags, 1);
 	*/
-	if (c == '%')
-		ft_print_percent(info, flags);
 	info->i++;
 }
 
-t_flags	ft_flagborn(t_flags flags)
+void	ft_flagborn(t_flags *flags)
 {
-	flags.flag = -1;
-	flags.width = -1;
-	flags.dot = -1;
-	flags.asterisk = -1;
-	flags.precision = -1;
-	flags.specifier = -1;
-	return (flags);
+	flags->flag = -1;
+	flags->width = -1;
+	flags->dot = -1;
+	flags->asterisk = -1;
+	flags->precision = -1;
+	flags->specifier = -1;
 }
 
 void	ft_huntflags(t_info *info)
@@ -51,7 +52,7 @@ void	ft_huntflags(t_info *info)
 	t_flags	flags;
 
 	info->i++;
-	flags = ft_flagborn(flags);
+	ft_flagborn(&flags);
 	if (ft_strchr(FLAGS, info->str[info->i]))
 		flags.flag = (info->str[info->i++] == '-') ? 0 : 1;
 	if (info->str[info->i] == '*' || ft_isdigit(info->str[info->i]))
