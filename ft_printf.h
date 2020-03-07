@@ -6,7 +6,7 @@
 /*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/21 01:34:00 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/07 16:23:09 by gariadno         ###   ########.fr       */
+/*   Updated: 2020/03/07 18:18:42 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdarg.h>
+# include <stdlib.h>
 
 # define SPECIFIER "dicspuxX%"
 # define FLAGS "-0"

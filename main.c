@@ -6,7 +6,7 @@
 /*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 16:37:00 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/07 15:47:02 by gariadno         ###   ########.fr       */
+/*   Updated: 2020/03/07 18:37:46 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,19 @@ int main()
    printf ("%s \n", "				\nA string\n");*/
 
    //%[Flags][Width][.Precisioon]Specifier
-/*   int i = 2;
-   printf("|%d|		\n",	i++);
-   printf("|%d|	\n",	i);
-   printf("|%03d|	\n",	3);
-   printf("|%-90.80d|	\n",	123456);
+   printf("|%u|	   	\n",	123456);
+   printf("|%10u|		   \n",	123456);
+   printf("|%010u|		\n",	123456);
+   printf("|%-10u|		\n",	123456);
+   printf("|%.10u|		\n",	123456);
+   printf("|%-50.7u|  	\n",	123456);
+   printf("|%050.7u|  	\n",	123456);
    
-   printf("|%2d|	\n",	3*1000);
-   printf("|%-2d|	\n",	3*1000);
-   printf("|%.3d|	\n",	123456);
+//   printf("|%u|	\n",	2147480000);
+/* 
    
+   
+
    printf("___________________\n\n");
    
    printf("|%s|		\n",	"ABCD");

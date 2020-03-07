@@ -6,7 +6,7 @@
 /*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 18:56:12 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/07 16:24:34 by gariadno         ###   ########.fr       */
+/*   Updated: 2020/03/07 17:51:40 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	ft_checktype(char c, t_info *info, t_flags *flags)
 	if (c == 'd' || c == 'i')
 		ft_printdi(info, flags);
 */
-	if (c == 'u')
-		ft_printu(info, flags);
-	else if (c == 'c')
-		ft_printc(info, flags);
+	/*if (c == 'u')
+		ft_print_u(info, flags);
+	else */if (c == 'c')
+		ft_print_c(info, flags);
 	else if (c == '%')
 		ft_print_c(info, flags);
 /*	
