@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_u.c                                       :+:      :+:    :+:   */
+/*   ft_print_d.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/07 16:21:59 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/09 16:32:00 by gariadno         ###   ########.fr       */
+/*   Created: 2020/03/09 16:29:59 by gariadno          #+#    #+#             */
+/*   Updated: 2020/03/09 16:31:52 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_print_u(t_info *info, t_flags *flags)
+void	ft_print_d(t_info *info, t_flags *flags)
 {
 	char	*num;
 	char	pading;

@@ -6,7 +6,7 @@
 /*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/21 01:34:00 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/07 18:18:42 by gariadno         ###   ########.fr       */
+/*   Updated: 2020/03/09 16:32:30 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,8 @@ int		ft_isdigit(int c);
 void	ft_print_c(t_info *info, t_flags *flags);
 void	ft_print_percent(t_info *info, t_flags *flags);
 void	ft_print_u(t_info *info, t_flags *flags);
+char	*ft_itoa_base(int value, int base, int letter);
+void	ft_putstr(t_info *info, char *s);
+int		ft_strlen(char *s);
 
 # endif
