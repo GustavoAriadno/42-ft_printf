@@ -6,7 +6,7 @@
 /*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/29 19:03:47 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/09 16:32:17 by gariadno         ###   ########.fr       */
+/*   Updated: 2020/03/10 15:17:10 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 int		ft_putchar(char c)
 {
 	return (write(1, &c, 1));
+}
+
+void	ft_addpads(int *duration, int len, t_info *info, int pad)
+{
+	while ((*duration)-- > len)
+		info->len += ft_putchar(pad);
 }
 
 int		ft_isdigit(int c)
@@ -68,7 +74,7 @@ char	*ft_strchr(const char *s, int c)
 	return (0);
 }
 
-char	*ft_itoa_base(int value, int base, int c)
+char	*ft_itoa_base(int value, int base, int alc)
 {
 	char	*str;
 	long	nb;
@@ -86,7 +92,7 @@ char	*ft_itoa_base(int value, int base, int c)
 	str[i] = '\0';
 	while (i-- + sign)
 	{
-		str[i] = (nb % base < 10) ? nb % base + '0' : nb % base + c - 10;
+		str[i] = (nb % base < 10) ? nb % base + '0' : nb % base + alc - 10;
 		nb /= base;
 	}
 	(i == 0) ? str[i] = '-' : 0;

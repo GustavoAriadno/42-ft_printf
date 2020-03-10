@@ -6,16 +6,34 @@
 /*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 16:37:00 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/09 16:25:54 by gariadno         ###   ########.fr       */
+/*   Updated: 2020/03/10 15:17:32 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
-
+/*
+void	ft_addpads(int *duration, int len)
+{
+	while ((*duration)-- > len)
+		ft_putchar('x');
+}
+*/
 int main()
 {
+  /* 
+   t_flags fl;
+   
+   fl.flag = -1;
+	fl.width = -1;
+	fl.dot = 40;
+	fl.precision = -1;
+	fl.specifier = -1;
 
+   //printf("%d\n", fl.dot);
+   ft_addpads(&(fl.dot), 20);
+   printf("%d", fl.dot);
+*/
 //    int *p;
 //    int x;
 
@@ -34,17 +52,18 @@ int main()
    printf ("%s \n", "				\nA string\n");*/
 
    //%[Flags][Width][.Precisioon]Specifier
-   ft_printf("|%u|	   	\n",	123456);
-   ft_printf("|%10u|		   \n",	123456);
-   ft_printf("|%010u|		\n",	123456);
-   ft_printf("|%-10u|		\n",	123456);
-   ft_printf("|%.10u|		\n",	123456);
-   ft_printf("|%-8.7u|  	\n",	123456);
-   ft_printf("|%050.7u|  	\n",	123456);
+   
+   printf("|%u|	   	\n",	123456);
+   printf("|%10u|		   \n",	123456);
+   printf("|%010u|		\n",	123456);
+   printf("|%-10u|		\n",	123456);
+   printf("|%.10u|		\n",	123456);
+   printf("|%-20.10u|  	\n",	123456);
+   printf("|%020.10u|  	\n",	123456);
    
 //   printf("|%u|	\n",	2147480000);
 /* 
-   
+   TESTAR ENDEREÇO DE ELEMENTO DA STRUCT PARA FT
    
 
    printf("___________________\n\n");
