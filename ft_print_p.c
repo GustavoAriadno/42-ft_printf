@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_x.c                                       :+:      :+:    :+:   */
+/*   ft_print_p.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/10 14:36:21 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/11 16:26:35 by gariadno         ###   ########.fr       */
+/*   Created: 2020/03/12 13:56:02 by gariadno          #+#    #+#             */
+/*   Updated: 2020/03/12 14:54:44 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_print_x(t_info *info, t_flags *flags, int alphacase)
+void	ft_print_p(t_info *info, t_flags *flags)
 {
-	char	*num;
+	char	*ptr;
 	char	pading;
 	int		len;
 	int		width;
 
-	num = ft_itoa_base(va_arg(info->args, unsigned int), 16, alphacase);
-	len = ft_strlen(num);
+	ptr = ft_itoa_base((size_t)va_arg(info->args, void *), 16, 'a');
+	len = ft_strlen(ptr) + 2;
 	width = (flags->precision > len) ? flags->precision : len;
-	if (flags->dot == 1 && flags->flag == ZERO)
-		flags->flag = -1;
+	(flags->dot == 1 && flags->flag == ZERO) ? flags->flag = -1 : 0;
 	pading = (flags->flag == ZERO) ? '0' : ' ';
 	if (flags->flag == MINUS)
 	{
+		ft_putstr(info, "0x");
 		ft_addpads(&(flags->precision), len, info, '0');
-		ft_putstr(info, num);
+		ft_putstr(info, ptr);
 	}
 	ft_addpads(&(flags->width), width, info, pading);
 	if (flags->flag != MINUS)
 	{
+		ft_putstr(info, "0x");
 		ft_addpads(&(flags->precision), len, info, '0');
-		ft_putstr(info, num);
+		ft_putstr(info, ptr);
 	}
 }

@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_percent.c                                 :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/06 11:47:27 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/12 15:17:12 by gariadno         ###   ########.fr       */
+/*   Created: 2020/03/12 16:29:35 by gariadno          #+#    #+#             */
+/*   Updated: 2020/03/12 16:30:41 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ft_print_percent(t_info *info, t_flags *flags)
+size_t	ft_strlen(char *s)
 {
-	char pading;
+	size_t	len;
 
-	pading = (flags->flag == ZERO) ? '0' : ' ';
-	if (flags->flag == MINUS)
-		info->len += ft_putchar('%');
-	while (flags->width-- > 1)
-		info->len += ft_putchar(pading);
-	if (flags->flag != MINUS)
-		info->len += ft_putchar('%');
+	len = 0;
+	while (s[len])
+		len++;
+	return (len);
 }

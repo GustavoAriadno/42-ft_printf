@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   gustavoMAIN.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 16:37:00 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/10 15:17:32 by gariadno         ###   ########.fr       */
+/*   Updated: 2020/03/12 15:38:47 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,21 @@ int main()
    printf ("%s \n", "				\nA string\n");*/
 
    //%[Flags][Width][.Precisioon]Specifier
-   
-   printf("|%u|	   	\n",	123456);
-   printf("|%10u|		   \n",	123456);
-   printf("|%010u|		\n",	123456);
-   printf("|%-10u|		\n",	123456);
-   printf("|%.10u|		\n",	123456);
-   printf("|%-20.10u|  	\n",	123456);
-   printf("|%020.10u|  	\n",	123456);
-   
+/*   
+   printf("len == %d\n", ft_printf("\n|%s|	   	\n",	"));
+   printf("len == %d\n", ft_printf("\n|%10s|		   \n",	"0123456789"));
+   printf("len == %d\n", ft_printf("\n|%020s|		\n",	"0123456789"));
+   printf("len == %d\n", ft_printf("\n|%-10.5s|		\n",	"0123456789"));
+   printf("len == %d\n", ft_printf("\n|%.5s|		\n",	"0123456789"));
+   printf("len == %d\n", ft_printf("\n|%-20.5s|  	\n",	"0123456789"));
+   printf("len == %d\n", ft_printf("\n|%010.5s|  	\n",	"A123456789"));
+*/
+/*
+   printf("len == %d\n", ft_printf("\n|%2s|	   	\n",	"A123456789"));
+   printf("len == %d\n", ft_printf("\n|%-2s|	   	\n",	"A123456789"));
+   printf("len == %d\n", ft_printf("\n|%2.0s|	   	\n",	"A123456789"));
+   printf("len == %d\n", ft_printf("\n|%-2.0s|	   	\n",	"A123456789"));
+*/
 //   printf("|%u|	\n",	2147480000);
 /* 
    TESTAR ENDEREÇO DE ELEMENTO DA STRUCT PARA FT
@@ -73,10 +79,15 @@ int main()
    printf("|%-9s|	\n",	"ABCD");
    printf("|%1s|	\n",	"ABCD");
    printf("|%1s|	\n",	"ABCD");
-   
-   printf("___________________\n\n");
 */
+   printf	   ("|%.5x|\n", 30);
+   ft_printf	("|%.5x|\n", 30);
+	printf	   ("|%5.*x|\n", -3, 1);
+   ft_printf	("|%5.*x|\n", -3, 1);
 /*   
+   printf("___________________\n\n");
+
+   
    printf("|%5%|		\n");
    printf("|%-5%|		\n");
    printf("|%05%|		\n");
@@ -99,12 +110,46 @@ int main()
 /*   
    
    printf("___________________\n\n");
+*/
+/*
+   int p;
 
-   printf("|%30p|	\n",	p);
-   printf("|%-30p|	\n",	p);
-   printf("|%2p|	\n",	p);
-   printf("|%-2p|	\n",	p);
+   p = 2;
+   printf("len == %d\n", ft_printf("\n|%p|	   	\n",	&p));
+   printf("len == %d\n", ft_printf("\n|%40p|		   \n",	&p));
+   printf("len == %d\n", ft_printf("\n|%080p|		\n",	&p));
+   printf("len == %d\n", ft_printf("\n|%080.50p|		\n",	&p));
+   printf("len == %d\n", ft_printf("\n|%40.20p|  	\n",	&p));
+   printf("len == %d\n", ft_printf("\n|%-40.20p|		\n",	&p));
+   printf("len == %d\n", ft_printf("\n|%020.5p|  	\n",	&p));
+*/
 
+/*
+   int a;
+
+   a = 2;
+   printf("\n%s", "TESTE COM P: \n");
+   
+   printf   ("\n|%-20p|\n", &a);
+   ft_printf("\n|%-20p|\n", &a);
+   
+
+   printf   ("\n__________\n");
+   printf   ("\n|%*p|\n", -20, &a);
+   ft_printf("\n|%*p|\n", -20, &a);
+   
+
+   printf   ("\n__________\n");
+   printf   ("\n|%p|\n", &a);
+   ft_printf("\n|%p|\n", &a);
+   
+   
+   printf   ("\n__________\n");
+   printf   ("\n|%15p|\n", &a);
+   ft_printf("\n|%15p|\n", &a);
+*/
+   
+/*
    printf("___________________\n\n");
    
    printf("|%X|		\n",	10);

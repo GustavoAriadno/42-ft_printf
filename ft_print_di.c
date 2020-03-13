@@ -6,7 +6,7 @@
 /*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/09 16:29:59 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/10 14:21:16 by gariadno         ###   ########.fr       */
+/*   Updated: 2020/03/12 15:07:50 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_print_di(t_info *info, t_flags *flags)
 	int		len;
 	int		width;
 
-	num = ft_itoa_base(va_arg(info->args, int), 10, 'a');
+	num = ft_itoa(va_arg(info->args, int));
 	len = ft_strlen(num);
 	width = (flags->precision > len) ? flags->precision : len;
 	if (flags->dot == 1 && flags->flag == ZERO)
@@ -27,16 +27,13 @@ void	ft_print_di(t_info *info, t_flags *flags)
 	pading = (flags->flag == ZERO) ? '0' : ' ';
 	if (flags->flag == MINUS)
 	{
-		while (flags->precision-- > len)
-			info->len += ft_putchar('0');
+		ft_addpads(&(flags->precision), len, info, '0');
 		ft_putstr(info, num);
 	}
-	while (flags->width-- > width)
-		info->len += ft_putchar(pading);
+	ft_addpads(&(flags->width), width, info, pading);
 	if (flags->flag != MINUS)
 	{
-		while (flags->precision-- > len)
-			info->len += ft_putchar('0');
+		ft_addpads(&(flags->precision), len, info, '0');
 		ft_putstr(info, num);
 	}
 }

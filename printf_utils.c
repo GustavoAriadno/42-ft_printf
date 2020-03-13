@@ -6,11 +6,12 @@
 /*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/29 19:03:47 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/10 15:17:10 by gariadno         ###   ########.fr       */
+/*   Updated: 2020/03/13 10:37:15 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 int		ft_putchar(char c)
 {
@@ -23,11 +24,6 @@ void	ft_addpads(int *duration, int len, t_info *info, int pad)
 		info->len += ft_putchar(pad);
 }
 
-int		ft_isdigit(int c)
-{
-	return (c >= '0' && c <= '9');
-}
-
 void	ft_putstr(t_info *info, char *s)
 {
 	int i;
@@ -35,27 +31,6 @@ void	ft_putstr(t_info *info, char *s)
 	i = 0;
 	while (s[i])
 		info->len += ft_putchar(s[i++]);
-}
-
-int		ft_strlen(char *s)
-{
-	int		len;
-
-	len = 0;
-	while (s[len])
-		len++;
-	return (len);
-}
-
-int		ft_miniatoi(t_info *info)
-{
-	int	num;
-
-	num = 0;
-	while (ft_isdigit(info->str[info->i]))
-		num = (num * 10) + info->str[info->i++] - '0';
-	info->i--;
-	return (num);
 }
 
 char	*ft_strchr(const char *s, int c)
@@ -74,25 +49,25 @@ char	*ft_strchr(const char *s, int c)
 	return (0);
 }
 
-char	*ft_itoa_base(int value, int base, int alc)
+char	*ft_itoa_base(size_t value, int base, int al_case)
 {
 	char	*str;
-	long	nb;
+	size_t	nb;
+	size_t	i;
 	int		sign;
-	int		i;
 
-	nb = (value < 0) ? -(long)value : value;
+	nb = (value < 0) ? -(size_t)value : value;
 	sign = (value < 0 && base == 10) ? -1 : 0;
 	i = (sign == -1) ? 2 : 1;
 	while ((nb /= base) >= 1)
 		i++;
-	nb = (value < 0) ? -(long)value : value;
+	nb = (value < 0) ? -(size_t)value : value;
 	if (!(str = (char *)malloc((i + 1) * sizeof(*str))))
 		return (NULL);
 	str[i] = '\0';
 	while (i-- + sign)
 	{
-		str[i] = (nb % base < 10) ? nb % base + '0' : nb % base + alc - 10;
+		str[i] = (nb % base < 10) ? nb % base + '0' : nb % base + al_case - 10;
 		nb /= base;
 	}
 	(i == 0) ? str[i] = '-' : 0;

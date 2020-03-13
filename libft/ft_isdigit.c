@@ -1,26 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_percent.c                                 :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/06 11:47:27 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/12 15:17:12 by gariadno         ###   ########.fr       */
+/*   Created: 2020/03/12 16:31:26 by gariadno          #+#    #+#             */
+/*   Updated: 2020/03/12 16:31:35 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-void	ft_print_percent(t_info *info, t_flags *flags)
+int		ft_isdigit(int c)
 {
-	char pading;
-
-	pading = (flags->flag == ZERO) ? '0' : ' ';
-	if (flags->flag == MINUS)
-		info->len += ft_putchar('%');
-	while (flags->width-- > 1)
-		info->len += ft_putchar(pading);
-	if (flags->flag != MINUS)
-		info->len += ft_putchar('%');
+	return (c >= '0' && c <= '9');
 }
