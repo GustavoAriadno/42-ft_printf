@@ -6,18 +6,84 @@
 #    By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/12 15:44:42 by gariadno          #+#    #+#              #
-#    Updated: 2020/03/12 16:19:35 by gariadno         ###   ########.fr        #
+#    Updated: 2020/03/13 16:54:38 by gariadno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	ft_printf.a
+NAME	=	libftprintf.a
 
-SRC		=	ft_print_percent.c \
-			ft_print_di.c \
-			ft_print_c.c \
-			ft_print_u.c \
-			ft_print_x.c \
-			ft_print_s.c \
-			ft_print_p.c \
-			print_utils.c \
-			ft_printf
+LIB		=	libft.a
+
+SRC_DIR	=	./src/
+
+LIB_DIR	=	./libft
+
+OBJ_DIR	=	./obj
+
+CC		=	gcc -Wall -Wextra -Werror
+
+INCLUDE	=	libftprintf.h
+
+SRC		=	$(SRC_DIR)ft_print_percent.c	\
+			$(SRC_DIR)ft_print_di.c			\
+			$(SRC_DIR)ft_print_c.c			\
+			$(SRC_DIR)ft_print_u.c			\
+			$(SRC_DIR)ft_print_x.c			\
+			$(SRC_DIR)ft_print_s.c			\
+			$(SRC_DIR)ft_print_p.c			\
+			$(SRC_DIR)ft_printf.c			\
+			$(SRC_DIR)ft_addpads.c			\
+			$(SRC_DIR)ft_itoa_base.c		\
+			$(SRC_DIR)ft_putchr.c			\
+			$(SRC_DIR)ft_strchr.c			\
+			$(SRC_DIR)ft_putstr.c
+
+SRC_OB	=	$(SRC_DIR)ft_print_percent.o	\
+			$(SRC_DIR)ft_print_di.o			\
+			$(SRC_DIR)ft_print_c.o			\
+			$(SRC_DIR)ft_print_u.o			\
+			$(SRC_DIR)ft_print_x.o			\
+			$(SRC_DIR)ft_print_s.o			\
+			$(SRC_DIR)ft_print_p.o			\
+			$(SRC_DIR)ft_printf.o			\
+			$(SRC_DIR)ft_addpads.o			\
+			$(SRC_DIR)ft_itoa_base.o		\
+			$(SRC_DIR)ft_putchr.o			\
+			$(SRC_DIR)ft_strchr.o			\
+			$(SRC_DIR)ft_putstr.o
+
+OBJ		=	$(SRC:.c=.o)
+
+RE_OBJ	=	$(OBJ_DIR)/ft_print_percent.o	\
+			$(OBJ_DIR)/ft_print_di.o		\
+			$(OBJ_DIR)/ft_print_c.o			\
+			$(OBJ_DIR)/ft_print_u.o			\
+			$(OBJ_DIR)/ft_print_x.o			\
+			$(OBJ_DIR)/ft_print_s.o			\
+			$(OBJ_DIR)/ft_print_p.o			\
+			$(OBJ_DIR)/ft_printf.o			\
+			$(OBJ_DIR)/ft_addpads.o			\
+			$(OBJ_DIR)/ft_itoa_base.o		\
+			$(OBJ_DIR)/ft_putchr.o			\
+			$(OBJ_DIR)/ft_strchr.o			\
+			$(OBJ_DIR)/ft_putstr.o
+
+all		:	$(NAME)
+
+$(NAME)	:	$(LIB) $(OBJ)
+			mv $(SRC_OB) $(OBJ_DIR)
+			ar rcs $(NAME) $(RE_OBJ)
+
+$(LIB)	:	
+			$(MAKE) -C $(LIB_DIR)
+			cp $(LIB_DIR)/$(LIB) $(NAME)
+
+clean	:
+			$(MAKE) clean -C $(LIB_DIR)
+			/bin/rm -f $(RE_OBJ)
+
+fclean	:	clean
+			$(MAKE) fclean -C $(LIB_DIR)
+			/bin/rm -f $(NAME)
+
+re		:	fclean all

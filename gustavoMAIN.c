@@ -6,11 +6,11 @@
 /*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 16:37:00 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/12 15:38:47 by gariadno         ###   ########.fr       */
+/*   Updated: 2020/03/14 20:01:23 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "includes/libftprintf.h"
 #include <stdio.h>
 /*
 void	ft_addpads(int *duration, int len)
@@ -79,11 +79,29 @@ int main()
    printf("|%-9s|	\n",	"ABCD");
    printf("|%1s|	\n",	"ABCD");
    printf("|%1s|	\n",	"ABCD");
-*/
-   printf	   ("|%.5x|\n", 30);
-   ft_printf	("|%.5x|\n", 30);
-	printf	   ("|%5.*x|\n", -3, 1);
-   ft_printf	("|%5.*x|\n", -3, 1);
+*//*
+   printf("len == %d\n\n", printf	   ("|%d|\n", -123456));
+   printf("______________________________\n");
+   printf("len == %d\n\n", ft_printf	("|%d|\n", -123456));
+   
+	printf("len == %d\n\n", printf	   ("|%-10d|\n", -123456));
+   printf("______________________________\n");
+   printf("len == %d\n\n", ft_printf	("|%-10d|\n", -123456));
+   
+   printf("len == %d\n\n", printf	   ("|%10d|\n", -123456));
+   printf("______________________________\n");
+   printf("len == %d\n\n", ft_printf	("|%10d|\n", -123456));
+   
+   printf("len == %d\n\n", printf      ("|%11.10d|\n", -123456789));
+   printf("len == %d\n\n", ft_printf	("|%11.10d|\n", -123456789));
+   
+   printf("______________________________\n");
+	printf("len == %d\n\n", printf	   ("|%20.10d|\n", -123456789));
+   printf("len == %d\n\n", ft_printf	("|%20.10d|\n", -123456789));
+   */
+   printf("______________________________\n");
+	printf("len == %d\n\n", printf	   ("|%0*d|\n", 7, -54));
+   printf("len == %d\n\n", ft_printf	("|%0*d|\n", 7, -54));
 /*   
    printf("___________________\n\n");
 

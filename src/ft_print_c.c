@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_print_c.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/13 14:28:35 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/13 14:29:12 by gariadno         ###   ########.fr       */
+/*   Created: 2020/03/06 01:03:46 by gariadno          #+#    #+#             */
+/*   Updated: 2020/03/13 15:25:45 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libftprintf.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_print_c(t_info *info, t_flags *flags)
 {
-	size_t	i;
+	char pading;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	pading = (flags->flag == ZERO) ? '0' : ' ';
+	if (flags->flag == MINUS)
+		info->len += ft_putchar(va_arg(info->args, int));
+	while (flags->width-- > 1)
+		info->len += ft_putchar(pading);
+	if (flags->flag != MINUS)
+		info->len += ft_putchar(va_arg(info->args, int));
 }

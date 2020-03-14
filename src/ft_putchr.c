@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/13 14:28:35 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/13 14:29:12 by gariadno         ###   ########.fr       */
+/*   Created: 2020/03/13 15:43:17 by gariadno          #+#    #+#             */
+/*   Updated: 2020/03/13 16:19:02 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libftprintf.h"
 
-size_t	ft_strlen(const char *s)
+int		ft_putchar(char c)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	return (write(1, &c, 1));
 }

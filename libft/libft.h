@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/13 14:28:35 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/13 14:29:12 by gariadno         ###   ########.fr       */
+/*   Created: 2020/03/13 13:19:08 by gariadno          #+#    #+#             */
+/*   Updated: 2020/03/13 14:44:58 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_H
+# define LIBFT_H
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
+# include <stdlib.h>
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
+int		ft_isdigit(int c);
+size_t	ft_strlen(const char *s);
+char	*ft_itoa(int nb);
+
+#endif

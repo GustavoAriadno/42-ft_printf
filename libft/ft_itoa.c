@@ -6,7 +6,7 @@
 /*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/12 16:40:30 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/12 16:41:20 by gariadno         ###   ########.fr       */
+/*   Updated: 2020/03/14 16:20:51 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ char	*ft_itoa(int nb)
 
 	num = (nb < 0) ? -(unsigned int)nb : nb;
 	minus = (nb < 0) ? 1 : 0;
-	len = (minus == 1) ? 1 : 0;
-	while (num)
+	len = (minus == 1) ? 2 : 1;
+	while (num > 9)
 	{
 		num = num / 10;
 		len++;
