@@ -19,7 +19,7 @@ char	*ft_itoa(int nb)
 	int				minus;
 	int				len;
 
-	num = (nb < 0) ? -(unsigned int)nb : nb;
+	num = (nb < 0) ? -(unsigned int)nb : (unsigned int)nb;
 	minus = (nb < 0) ? 1 : 0;
 	len = (minus == 1) ? 2 : 1;
 	while (num > 9)
@@ -27,7 +27,7 @@ char	*ft_itoa(int nb)
 		num = num / 10;
 		len++;
 	}
-	num = (nb < 0) ? -(unsigned int)nb : nb;
+	num = (nb < 0) ? -(unsigned int)nb : (unsigned int)nb;
 	if (!(str = malloc((len + 1) * sizeof(*str))))
 		return (NULL);
 	str[len] = '\0';
