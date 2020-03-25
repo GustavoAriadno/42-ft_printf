@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   gustavoMAIN.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: saopaulo42 <saopaulo42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 16:37:00 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/14 20:01:23 by gariadno         ###   ########.fr       */
+/*   Updated: 2020/03/25 19:14:07 by saopaulo42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,68 @@
 void	ft_addpads(int *duration, int len)
 {
 	while ((*duration)-- > len)
-		ft_putchar('x');
+		ft_putchar('x');d"
+d"
+d"
+d"
+d"
+d"
 }
 */
 int main()
 {
+   int		a = 4;
+	int		b = 0;
+	char	c = 'a';
+	int		d = 2147483647;
+	int		e = -2147483648;
+	int		f = 42;
+	int		g = 25;
+	int		h = 4200;
+	int		i = 8;
+	int		j = -12;
+	int		k = 123456789;
+	int		l = 0;
+	int		m = -12345678;
+
+/*
+   a = -2;
+	while(a < 5) //T70-177
+	{
+		b = -2;
+		while (b < 5)
+		{
+			printf("-T1- Return : %d\n", printf("|%*.*i|%*.*d|%*.*d|%*.*d|%*.*d|%*.*d|%*.*d|%*.*d|\n", a, b, i, a, b, j, a, b, k, a, b, l, a, b, m, a, b, c, a, b, e, a, b, d));
+         printf("-T1- Return : %d\n\n", ft_printf("|%*.*i|%*.*d|%*.*d|%*.*d|%*.*d|%*.*d|%*.*d|%*.*d|\n", a, b, i, a, b, j, a, b, k, a, b, l, a, b, m, a, b, c, a, b, e, a, b, d));
+
+			printf("-T2- Return : %d\n", printf("|%-*.*i|%-*.*d|%-*.*d|%-*.*d|%-*.*d|%-*.*d|%-*.*d|%-*.*d|\n", a, b, i, a, b, j, a, b, k, a, b, l, a, b, m, a, b, c, a, b, e, a, b, d));
+         printf("-T2- Return : %d\n\n", ft_printf("|%-*.*i|%-*.*d|%-*.*d|%-*.*d|%-*.*d|%-*.*d|%-*.*d|%-*.*d|\n", a, b, i, a, b, j, a, b, k, a, b, l, a, b, m, a, b, c, a, b, e, a, b, d));
+
+			printf("-T3- Return : %d\n", printf("|%0*.*i|%0*.*d|%0*.*d|%0*.*d|%0*.*d|%0*.*d|%0*.*d|%0*.*d|\n", a, b, i, a, b, j, a, b, k, a, b, l, a, b, m, a, b, c, a, b, e, a, b, d));
+         printf("-T3- Return : %d\n\n", ft_printf("|%0*.*i|%0*.*d|%0*.*d|%0*.*d|%0*.*d|%0*.*d|%0*.*d|%0*.*d|\n", a, b, i, a, b, j, a, b, k, a, b, l, a, b, m, a, b, c, a, b, e, a, b, d));
+			b++;
+		}
+		a++;
+	}
+   */
+  printf("len == %d\n",    printf("\n|%-2s|%.s|%-4s|%-2.4s|%-8.12s|%3s|%8s|%---2s|%.12s|%.0s|%.1s|%.2s|%.4s|%.8s|    \n", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL));
+  printf("len == %d\n", ft_printf("\n|%-2s|%.s|%-4s|%-2.4s|%-8.12s|%3s|%8s|%---2s|%.12s|%.0s|%.1s|%.2s|%.4s|%.8s|    \n", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL));
+/*   
+   printf(" -T8- Return : %d\n",   printf("|%5i|%5d|%5d|%5d|%5d|%5d|%5d|%5d|\n", i, j, k, l, m, c, e, d)); //T8
+	printf(" -T8- Return : %d\n\n", ft_printf("|%5i|%5d|%5d|%5d|%5d|%5d|%5d|%5d|\n", i, j, k, l, m, c, e, d)); //T8
+
+   printf(" -T5- Return : %d\n",   printf("|%2i|%2d|%2d|%2d|%2d|%2d|%2d|%2d|\n", i, j, k, l, m, c, e, d)); //T5
+   printf(" -T5- Return : %d\n\n", ft_printf("|%2i|%2d|%2d|%2d|%2d|%2d|%2d|%2d|\n", i, j, k, l, m, c, e, d)); //T5
+
+	printf(" -T6- Return : %d\n",   printf("|%3i|%3d|%3d|%3d|%3d|%3d|%3d|%3d|\n", i, j, k, l, m, c, e, d)); //T6
+   printf(" -T6- Return : %d\n\n", ft_printf("|%3i|%3d|%3d|%3d|%3d|%3d|%3d|%3d|\n", i, j, k, l, m, c, e, d)); //T6
+   
+	printf(" -T7- Return : %d\n",   printf("|%4i|%4d|%4d|%4d|%4d|%4d|%4d|%4d|\n", i, j, k, l, m, c, e, d)); //T7
+   printf(" -T7- Return : %d\n\n", ft_printf("|%4i|%4d|%4d|%4d|%4d|%4d|%4d|%4d|\n", i, j, k, l, m, c, e, d)); //T7
+	
+   printf(" -T9- Return : %d\n",   printf("|%6i|%6d|%6d|%6d|%6d|%6d|%6d|%6d|\n", i, j, k, l, m, c, e, d)); //T9
+   printf(" -T9- Return : %d\n\n", ft_printf("|%6i|%6d|%6d|%6d|%6d|%6d|%6d|%6d|\n", i, j, k, l, m, c, e, d)); //T9
+*/
   /* 
    t_flags fl;
    
@@ -99,9 +156,12 @@ int main()
 	printf("len == %d\n\n", printf	   ("|%20.10d|\n", -123456789));
    printf("len == %d\n\n", ft_printf	("|%20.10d|\n", -123456789));
    */
+  /*
    printf("______________________________\n");
 	printf("len == %d\n\n", printf	   ("|%0*d|\n", 7, -54));
    printf("len == %d\n\n", ft_printf	("|%0*d|\n", 7, -54));
+   */
+   
 /*   
    printf("___________________\n\n");
 
