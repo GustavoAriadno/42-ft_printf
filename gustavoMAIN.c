@@ -6,7 +6,7 @@
 /*   By: saopaulo42 <saopaulo42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 16:37:00 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/25 19:14:07 by saopaulo42       ###   ########.fr       */
+/*   Updated: 2020/03/25 20:28:06 by saopaulo42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ int main()
 		a++;
 	}
    */
-  printf("len == %d\n",    printf("\n|%-2s|%.s|%-4s|%-2.4s|%-8.12s|%3s|%8s|%---2s|%.12s|%.0s|%.1s|%.2s|%.4s|%.8s|    \n", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL));
-  printf("len == %d\n", ft_printf("\n|%-2s|%.s|%-4s|%-2.4s|%-8.12s|%3s|%8s|%---2s|%.12s|%.0s|%.1s|%.2s|%.4s|%.8s|    \n", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL));
+  printf("len == %d\n",    printf("\n|%*.*d|\n", 10, 5, -42));
+  printf("len == %d\n", ft_printf("\n|%*.*d|\n", 10, 5, -42));
 /*   
    printf(" -T8- Return : %d\n",   printf("|%5i|%5d|%5d|%5d|%5d|%5d|%5d|%5d|\n", i, j, k, l, m, c, e, d)); //T8
 	printf(" -T8- Return : %d\n\n", ft_printf("|%5i|%5d|%5d|%5d|%5d|%5d|%5d|%5d|\n", i, j, k, l, m, c, e, d)); //T8

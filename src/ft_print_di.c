@@ -6,7 +6,7 @@
 /*   By: saopaulo42 <saopaulo42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/09 16:29:59 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/25 18:49:08 by saopaulo42       ###   ########.fr       */
+/*   Updated: 2020/03/25 20:42:56 by saopaulo42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ static void	fucking_minus(t_info *info, char **num)
 	{
 		info->len += ft_putchar('-');
 		(*num)++;
-		//(*len)--;
 	}
 }
 
@@ -42,14 +41,11 @@ void		ft_print_di(t_info *info, t_flags *flags)
 		ft_addpads(flags->precision, len, info, '0');
 		(*num == '0' && flags->precision == 0) ? 0 : ft_putstr(info, num);
 	}
-	//(pading == '0' || flags->dot == 1) ? fucking_minus(info, &num, &len) : 0;
-	//((pading == '0' || flags->dot == 1) && flags->flag != -2) ? fucking_minus(info, &num, &len) : 0;
-	//((pading == '0' || width > len) && *num == '-') ? fucking_minus(info, &num, &len) : 0;
-	//(pading == '0' || flags->width-- < width || flags->precision-- > width) ? fucking_minus(info, &num, &len): 0;
-	(pading == '0' || flags->width <= width) ? fucking_minus(info, &num): 0;
+	(pading == '0') ? fucking_minus(info, &num): 0;
 	ft_addpads(flags->width, width, info, pading);
 	if (flags->flag != MINUS)
 	{
+		fucking_minus(info, &num);
 		ft_addpads(flags->precision, len, info, '0');
 		(*num == '0' && flags->precision == 0) ? 0 : ft_putstr(info, num);
 	}
