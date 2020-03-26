@@ -6,12 +6,11 @@
 /*   By: saopaulo42 <saopaulo42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/09 16:29:59 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/25 20:42:56 by saopaulo42       ###   ########.fr       */
+/*   Updated: 2020/03/26 13:49:43 by saopaulo42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libftprintf.h"
-#include <stdio.h>
 
 static void	fucking_minus(t_info *info, char **num)
 {
@@ -30,10 +29,10 @@ void		ft_print_di(t_info *info, t_flags *flags)
 	int		width;
 
 	num = ft_itoa(va_arg(info->args, int));
-	len = (*num == '0' && flags->dot == 1 && flags->precision == 0) ? 0 : ft_strlen(num);
-	(*num == '-' && flags->precision != -1) ? flags->precision++ : 0;
+	len = (*num == '0' && flags->precision == 0) ? 0 : ft_strlen(num);
+	(*num == '-' && flags->precision > 1) ? flags->precision++ : 0;
 	width = (flags->precision > len) ? flags->precision : len;
-	(flags->dot == 1 && flags->flag == ZERO  && flags->precision >= 0) ? flags->flag = -2 : 0;
+	(flags->flag == ZERO  && flags->precision >= 0) ? flags->flag = -1 : 0;
 	pading = (flags->flag == ZERO) ? '0' : ' ';
 	if (flags->flag == MINUS)  
 	{
