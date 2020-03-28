@@ -6,7 +6,7 @@
 /*   By: saopaulo42 <saopaulo42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 18:56:12 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/27 22:08:18 by saopaulo42       ###   ########.fr       */
+/*   Updated: 2020/03/28 01:00:29 by saopaulo42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ static void	ft_checktype(char c, t_info *info, t_flags *flags)
 	else if (c == 'p')
 		ft_print_p(info, flags);
 	else if (c == 'x')
-		ft_print_x(info, flags, 'a');
+		ft_print_x(info, flags, LOWER_CASE);
 	else if (c == 'X')
-		ft_print_x(info, flags, 'A');
+		ft_print_x(info, flags, UPPER_CASE);
 	else if (c == '%')
 		ft_print_percent(info, flags);
 	info->i++;
@@ -53,8 +53,8 @@ static void	ft_flagborn(t_flags *flags)
 
 static void	ft_huntflags(t_info *info, t_flags flags)
 {
-	while (info->str[info->i] == '-' || info->str[info->i] == '0')
-		flags.flag = (info->str[info->i++] == '0' && flags.flag != MINUS)
+	while (info->str[info->i] == MINUS || info->str[info->i] == ZERO)
+		flags.flag = (info->str[info->i++] == ZERO && flags.flag != MINUS)
 			? ZERO : MINUS;
 	if (info->str[info->i] == '*' || ft_isdigit(info->str[info->i]))
 	{

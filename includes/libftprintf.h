@@ -3,35 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: saopaulo42 <saopaulo42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/13 15:23:50 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/14 16:57:42 by gariadno         ###   ########.fr       */
+/*   Updated: 2020/03/28 01:16:21 by saopaulo42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef FT_LIBFTPRINTF_H
+# define FT_LIBFTPRINTF_H
 
 # include <unistd.h>
 # include <stdarg.h>
 # include <stdlib.h>
 
 # define SPECIFIER "dicspuxX%"
+# define LOWER_CASE 'a'
+# define UPPER_CASE 'A'
 # define STR_NULL "(null)"
-# define FLAGS "-0"
 # define SPACE ' '
 # define DOT '.'
-# define MINUS 0
-# define ZERO 1
+# define MINUS '-'
+# define ZERO '0'
 
 typedef struct	s_flags
 {
 	int	flag;
 	int	width;
-	int	dot;
 	int	precision;
-	int specifier;
 }				t_flags;
 
 typedef struct	s_info
@@ -50,14 +49,14 @@ void			ft_putstr(t_info *info, char *s);
 int				ft_isdigit(int c);
 char			*ft_strchr(const char *s, int c);
 char			*ft_itoa(int nb);
-char			*ft_itoa_base(size_t value, int base, int alc);
+char			*ft_itoa_base(size_t nb, int base, int alc);
 void			ft_addpads(int duration, int len, t_info *info, int pad);
 
 void			ft_print_c(t_info *info, t_flags *flags);
 void			ft_print_percent(t_info *info, t_flags *flags);
 void			ft_print_u(t_info *info, t_flags *flags);
 void			ft_print_di(t_info *info, t_flags *flags);
-void			ft_print_x(t_info *info, t_flags *flags, int alphacase);
+void			ft_print_x(t_info *info, t_flags *flags, int al_case);
 void			ft_print_s(t_info *info, t_flags *flags);
 void			ft_print_p(t_info *info, t_flags *flags);
 

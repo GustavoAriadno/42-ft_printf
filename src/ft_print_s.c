@@ -6,7 +6,7 @@
 /*   By: saopaulo42 <saopaulo42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/11 16:42:03 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/27 21:59:51 by saopaulo42       ###   ########.fr       */
+/*   Updated: 2020/03/28 00:56:34 by saopaulo42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void		ft_print_s(t_info *info, t_flags *flags)
 	len = ft_strlen(str);
 	width = (flags->precision < len && flags->precision > -1) ?
 		flags->precision : len;
-	pading = (flags->flag == ZERO) ? '0' : ' ';
+	pading = (flags->flag == ZERO) ? ZERO : SPACE;
 	if (flags->flag == MINUS)
 		(isnull && width < len) ? 0 : ft_put_s(info, str, width);
 	(isnull && width < len) ? width = 0 : 0;

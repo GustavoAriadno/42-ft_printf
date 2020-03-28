@@ -3,26 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: saopaulo42 <saopaulo42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/13 15:45:16 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/13 15:45:17 by gariadno         ###   ########.fr       */
+/*   Updated: 2020/03/28 01:16:08 by saopaulo42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libftprintf.h"
 
-char	*ft_itoa_base(size_t value, int base, int al_case)
+char	*ft_itoa_base(size_t nb, int base, int al_case)
 {
 	char	*str;
-	size_t	nb;
+	size_t	tmp;
 	size_t	i;
 
-	nb = value;
+	tmp = nb;
 	i = 1;
-	while ((nb /= base) >= 1)
+	while ((tmp /= base) >= 1)
 		i++;
-	nb = value;
 	if (!(str = (char *)malloc((i + 1) * sizeof(*str))))
 		return (NULL);
 	str[i] = '\0';

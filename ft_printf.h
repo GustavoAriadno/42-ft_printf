@@ -6,7 +6,7 @@
 /*   By: saopaulo42 <saopaulo42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/21 01:34:00 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/27 22:08:33 by saopaulo42       ###   ########.fr       */
+/*   Updated: 2020/03/28 00:51:08 by saopaulo42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 # define FLAGS "-0"
 # define SPACE ' '
 # define DOT '.'
-# define MINUS 0
-# define ZERO 1
+# define MINUS 45
+# define ZERO '0'
 
 typedef struct	s_flags
 {
