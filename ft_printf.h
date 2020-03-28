@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: saopaulo42 <saopaulo42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/21 01:34:00 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/13 10:37:32 by gariadno         ###   ########.fr       */
+/*   Updated: 2020/03/27 22:08:33 by saopaulo42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,7 @@ typedef struct	s_flags
 {
 	int	flag;
 	int	width;
-	int	dot;
 	int	precision;
-	int specifier;
 }				t_flags;
 
 typedef struct	s_info

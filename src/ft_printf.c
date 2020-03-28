@@ -6,7 +6,7 @@
 /*   By: saopaulo42 <saopaulo42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 18:56:12 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/24 18:14:30 by saopaulo42       ###   ########.fr       */
+/*   Updated: 2020/03/27 22:08:18 by saopaulo42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,7 @@ static void	ft_flagborn(t_flags *flags)
 {
 	flags->flag = -1;
 	flags->width = -1;
-	flags->dot = -1;
 	flags->precision = -1;
-	flags->specifier = -1;
 }
 
 static void	ft_huntflags(t_info *info, t_flags flags)
@@ -68,7 +66,6 @@ static void	ft_huntflags(t_info *info, t_flags flags)
 	}
 	if (info->str[info->i] == DOT)
 	{
-		flags.dot = 1;
 		info->i++;
 		flags.precision = (info->str[info->i] == '*') ?
 			va_arg(info->args, int) : ft_miniatoi(info);
@@ -84,7 +81,6 @@ int			ft_printf(const char *str, ...)
 {
 	t_info	info;
 	t_flags	flags;
-	int		len;
 
 	info.str = str;
 	info.len = 0;
@@ -93,10 +89,7 @@ int			ft_printf(const char *str, ...)
 	while (info.str[info.i])
 	{
 		if (info.str[info.i] != '%')
-		{
-			info.len += ft_putchar(info.str[info.i]);
-			info.i++;
-		}
+			info.len += ft_putchar(info.str[info.i++]);
 		else
 		{
 			info.i++;
@@ -104,7 +97,6 @@ int			ft_printf(const char *str, ...)
 			ft_huntflags(&info, flags);
 		}
 	}
-	len = info.len;
 	va_end(info.args);
-	return (len);
+	return (info.len);
 }
