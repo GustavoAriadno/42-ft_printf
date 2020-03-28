@@ -6,7 +6,7 @@
 /*   By: saopaulo42 <saopaulo42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 18:56:12 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/28 01:00:29 by saopaulo42       ###   ########.fr       */
+/*   Updated: 2020/03/28 05:17:19 by saopaulo42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,21 @@ static int	ft_miniatoi(t_info *info)
 
 static void	ft_checktype(char c, t_info *info, t_flags *flags)
 {
-	if (c == 'd' || c == 'i')
+	if (c == DECIMAL || c == INTEGER)
 		ft_print_di(info, flags);
-	else if (c == 'u')
+	else if (c == UNSIGNED)
 		ft_print_u(info, flags);
-	else if (c == 'c')
+	else if (c == CHAR)
 		ft_print_c(info, flags);
-	else if (c == 's')
+	else if (c == STRING)
 		ft_print_s(info, flags);
-	else if (c == 'p')
+	else if (c == POINTER)
 		ft_print_p(info, flags);
-	else if (c == 'x')
+	else if (c == LOW_HEXA)
 		ft_print_x(info, flags, LOWER_CASE);
-	else if (c == 'X')
+	else if (c == UP_HEXA)
 		ft_print_x(info, flags, UPPER_CASE);
-	else if (c == '%')
+	else if (c == PERCENT)
 		ft_print_percent(info, flags);
 	info->i++;
 }
@@ -56,9 +56,9 @@ static void	ft_huntflags(t_info *info, t_flags flags)
 	while (info->str[info->i] == MINUS || info->str[info->i] == ZERO)
 		flags.flag = (info->str[info->i++] == ZERO && flags.flag != MINUS)
 			? ZERO : MINUS;
-	if (info->str[info->i] == '*' || ft_isdigit(info->str[info->i]))
+	if (info->str[info->i] == ASTERISK || ft_isdigit(info->str[info->i]))
 	{
-		flags.width = (info->str[info->i] == '*') ?
+		flags.width = (info->str[info->i] == ASTERISK) ?
 			va_arg(info->args, int) : ft_miniatoi(info);
 		(flags.width < 0) ? flags.flag = MINUS : 0;
 		(flags.width < 0) ? flags.width = flags.width * -1 : 0;
@@ -67,7 +67,7 @@ static void	ft_huntflags(t_info *info, t_flags flags)
 	if (info->str[info->i] == DOT)
 	{
 		info->i++;
-		flags.precision = (info->str[info->i] == '*') ?
+		flags.precision = (info->str[info->i] == ASTERISK) ?
 			va_arg(info->args, int) : ft_miniatoi(info);
 		info->i++;
 	}

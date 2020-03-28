@@ -6,7 +6,7 @@
 /*   By: saopaulo42 <saopaulo42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/13 15:23:50 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/28 01:16:21 by saopaulo42       ###   ########.fr       */
+/*   Updated: 2020/03/28 05:07:15 by saopaulo42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,25 @@
 # include <stdarg.h>
 # include <stdlib.h>
 
-# define SPECIFIER "dicspuxX%"
-# define LOWER_CASE 'a'
-# define UPPER_CASE 'A'
-# define STR_NULL "(null)"
-# define SPACE ' '
-# define DOT '.'
-# define MINUS '-'
-# define ZERO '0'
+# define LOWER_CASE	'a'
+# define UPPER_CASE	'A'
+# define SPECIFIER	"dicspuxX%"
+# define STR_NULL	"(null)"
+# define ASTERISK	'*'
+# define SPACE		' '
+# define MINUS		'-'
+# define ZERO		'0'
+# define DOT		'.'
+
+# define DECIMAL	'd'
+# define INTEGER	'i'
+# define UNSIGNED	'u'
+# define CHAR		'c'
+# define STRING		's'
+# define POINTER	'p'
+# define LOW_HEXA	'x'
+# define UP_HEXA	'X'
+# define PERCENT	'%'
 
 typedef struct	s_flags
 {
