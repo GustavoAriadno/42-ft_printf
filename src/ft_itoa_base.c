@@ -6,13 +6,13 @@
 /*   By: saopaulo42 <saopaulo42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/13 15:45:16 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/28 01:16:08 by saopaulo42       ###   ########.fr       */
+/*   Updated: 2020/03/29 18:31:23 by saopaulo42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libftprintf.h"
 
-char	*ft_itoa_base(size_t nb, int base, int al_case)
+char	*ft_itoa_base(size_t nb, int base, char alpha_case)
 {
 	char	*str;
 	size_t	tmp;
@@ -27,7 +27,10 @@ char	*ft_itoa_base(size_t nb, int base, int al_case)
 	str[i] = '\0';
 	while (i--)
 	{
-		str[i] = (nb % base < 10) ? nb % base + '0' : nb % base + al_case - 10;
+		if (nb % base < 10)
+			str[i] = nb % base + '0';
+		else
+			str[i] = nb % base + alpha_case - 10;
 		nb /= base;
 	}
 	return (str);

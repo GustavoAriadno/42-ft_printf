@@ -6,7 +6,7 @@
 /*   By: saopaulo42 <saopaulo42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/13 15:23:50 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/28 05:07:15 by saopaulo42       ###   ########.fr       */
+/*   Updated: 2020/03/29 18:32:28 by saopaulo42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,23 +52,23 @@ typedef struct	s_info
 	int			i;
 }				t_info;
 
-int				ft_printf(const char *str, ...);
-int				ft_strlen(char *s);
 int				ft_putchar(char c);
+int				ft_strlen(char *s);
+int				ft_printf(const char *str, ...);
 void			ft_putstr(t_info *info, char *s);
 
+char			*ft_itoa(int nb);
 int				ft_isdigit(int c);
 char			*ft_strchr(const char *s, int c);
-char			*ft_itoa(int nb);
-char			*ft_itoa_base(size_t nb, int base, int alc);
+char			*ft_itoa_base(size_t nb, int base, char alpha_case);
 void			ft_addpads(int duration, int len, t_info *info, int pad);
 
-void			ft_print_c(t_info *info, t_flags *flags);
-void			ft_print_percent(t_info *info, t_flags *flags);
-void			ft_print_u(t_info *info, t_flags *flags);
-void			ft_print_di(t_info *info, t_flags *flags);
-void			ft_print_x(t_info *info, t_flags *flags, int al_case);
 void			ft_print_s(t_info *info, t_flags *flags);
+void			ft_print_u(t_info *info, t_flags *flags);
+void			ft_print_c(t_info *info, t_flags *flags);
 void			ft_print_p(t_info *info, t_flags *flags);
+void			ft_print_di(t_info *info, t_flags *flags);
+void			ft_print_percent(t_info *info, t_flags *flags);
+void			ft_print_x(t_info *info, t_flags *flags, char alpha_case);
 
 #endif

@@ -6,20 +6,20 @@
 /*   By: saopaulo42 <saopaulo42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/10 14:36:21 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/28 01:07:49 by saopaulo42       ###   ########.fr       */
+/*   Updated: 2020/03/29 18:33:09 by saopaulo42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libftprintf.h"
 
-void	ft_print_x(t_info *info, t_flags *flags, int alphacase)
+void	ft_print_x(t_info *info, t_flags *flags, char alpha_case)
 {
 	char	*num;
 	char	pading;
 	int		len;
 	int		width;
 
-	num = ft_itoa_base(va_arg(info->args, unsigned int), 16, alphacase);
+	num = ft_itoa_base(va_arg(info->args, unsigned int), 16, alpha_case);
 	len = (*num == ZERO && flags->precision == 0) ? 0 : ft_strlen(num);
 	width = (flags->precision > len) ? flags->precision : len;
 	if (flags->flag == ZERO && flags->precision >= 0)
