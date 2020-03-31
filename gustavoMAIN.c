@@ -60,8 +60,9 @@ int main()
 		a++;
 	}
    */
-  printf("len == %d\n",    printf("\n|%*.*d|\n", 10, 5, -42));
-  printf("len == %d\n", ft_printf("\n|%*.*d|\n", 10, 5, -42));
+	printf("%d", 0xc0);
+//  printf("len == %d\n",    printf("\n|%*.*d|\n", 10, 5, -42));
+//  printf("len == %d\n", ft_printf("\n|%*.*d|\n", 10, 5, -42));
 /*   
    printf(" -T8- Return : %d\n",   printf("|%5i|%5d|%5d|%5d|%5d|%5d|%5d|%5d|\n", i, j, k, l, m, c, e, d)); //T8
 	printf(" -T8- Return : %d\n\n", ft_printf("|%5i|%5d|%5d|%5d|%5d|%5d|%5d|%5d|\n", i, j, k, l, m, c, e, d)); //T8

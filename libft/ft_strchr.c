@@ -3,14 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: saopaulo42 <saopaulo42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/13 15:44:54 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/13 15:44:56 by gariadno         ###   ########.fr       */
+/*   Created: 2020/03/31 19:10:45 by saopaulo42        #+#    #+#             */
+/*   Updated: 2020/03/31 19:10:50 by saopaulo42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "../includes/libftprintf.h"
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -25,5 +23,7 @@ char	*ft_strchr(const char *s, int c)
 			return (&str[i]);
 		i++;
 	}
+	if (c == 0)
+		return (&str[i]);
 	return (0);
 }

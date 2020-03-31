@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: saopaulo42 <saopaulo42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/13 13:19:08 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/13 14:44:58 by gariadno         ###   ########.fr       */
+/*   Updated: 2020/03/31 19:11:37 by saopaulo42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 
 # include <stdlib.h>
 
+char	*ft_itoa(int nb);
 int		ft_isdigit(int c);
 size_t	ft_strlen(const char *s);
-char	*ft_itoa(int nb);
+char	*ft_strchr(const char *s, int c);
 
 #endif

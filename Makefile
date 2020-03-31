@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+         #
+#    By: saopaulo42 <saopaulo42@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/12 15:44:42 by gariadno          #+#    #+#              #
-#    Updated: 2020/03/13 16:54:38 by gariadno         ###   ########.fr        #
+#    Updated: 2020/03/31 19:15:35 by saopaulo42       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,6 @@ SRC		=	$(SRC_DIR)ft_print_percent.c	\
 			$(SRC_DIR)ft_addpads.c			\
 			$(SRC_DIR)ft_itoa_base.c		\
 			$(SRC_DIR)ft_putchr.c			\
-			$(SRC_DIR)ft_strchr.c			\
 			$(SRC_DIR)ft_putstr.c
 
 SRC_OB	=	$(SRC_DIR)ft_print_percent.o	\
@@ -49,7 +48,6 @@ SRC_OB	=	$(SRC_DIR)ft_print_percent.o	\
 			$(SRC_DIR)ft_addpads.o			\
 			$(SRC_DIR)ft_itoa_base.o		\
 			$(SRC_DIR)ft_putchr.o			\
-			$(SRC_DIR)ft_strchr.o			\
 			$(SRC_DIR)ft_putstr.o
 
 OBJ		=	$(SRC:.c=.o)
@@ -65,7 +63,6 @@ RE_OBJ	=	$(OBJ_DIR)/ft_print_percent.o	\
 			$(OBJ_DIR)/ft_addpads.o			\
 			$(OBJ_DIR)/ft_itoa_base.o		\
 			$(OBJ_DIR)/ft_putchr.o			\
-			$(OBJ_DIR)/ft_strchr.o			\
 			$(OBJ_DIR)/ft_putstr.o
 
 all		:	$(NAME)

@@ -6,7 +6,7 @@
 /*   By: saopaulo42 <saopaulo42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 18:56:12 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/28 05:17:19 by saopaulo42       ###   ########.fr       */
+/*   Updated: 2020/03/31 19:18:12 by saopaulo42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,39 +23,36 @@ static int	ft_miniatoi(t_info *info)
 	return (num);
 }
 
-static void	ft_checktype(char c, t_info *info, t_flags *flags)
+static void	ft_checktype(char specifier, t_info *info, t_flags *flags)
 {
-	if (c == DECIMAL || c == INTEGER)
+	if (!specifier)
+		return ;
+	else if (specifier == DECIMAL || specifier == INTEGER)
 		ft_print_di(info, flags);
-	else if (c == UNSIGNED)
+	else if (specifier == UNSIGNED)
 		ft_print_u(info, flags);
-	else if (c == CHAR)
+	else if (specifier == CHAR)
 		ft_print_c(info, flags);
-	else if (c == STRING)
+	else if (specifier == STRING)
 		ft_print_s(info, flags);
-	else if (c == POINTER)
+	else if (specifier == POINTER)
 		ft_print_p(info, flags);
-	else if (c == LOW_HEXA)
+	else if (specifier == LOW_HEXA)
 		ft_print_x(info, flags, LOWER_CASE);
-	else if (c == UP_HEXA)
+	else if (specifier == UP_HEXA)
 		ft_print_x(info, flags, UPPER_CASE);
-	else if (c == PERCENT)
+	else if (specifier == PERCENT)
 		ft_print_percent(info, flags);
 	info->i++;
-}
-
-static void	ft_flagborn(t_flags *flags)
-{
-	flags->flag = -1;
-	flags->width = -1;
-	flags->precision = -1;
 }
 
 static void	ft_huntflags(t_info *info, t_flags flags)
 {
 	while (info->str[info->i] == MINUS || info->str[info->i] == ZERO)
-		flags.flag = (info->str[info->i++] == ZERO && flags.flag != MINUS)
-			? ZERO : MINUS;
+		if (info->str[info->i++] == ZERO && flags.flag != MINUS)
+			flags.flag = ZERO;
+		else
+			flags.flag = MINUS;
 	if (info->str[info->i] == ASTERISK || ft_isdigit(info->str[info->i]))
 	{
 		flags.width = (info->str[info->i] == ASTERISK) ?
@@ -73,8 +70,15 @@ static void	ft_huntflags(t_info *info, t_flags flags)
 	}
 	if (ft_strchr(SPECIFIER, info->str[info->i]))
 		ft_checktype(info->str[info->i], info, &flags);
-	else if (info->str[info->i] != '\0')
+	else
 		info->i++;
+}
+
+static void	ft_flagborn(t_flags *flags)
+{
+	flags->flag = -1;
+	flags->width = -1;
+	flags->precision = -1;
 }
 
 int			ft_printf(const char *str, ...)
