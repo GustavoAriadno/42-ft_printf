@@ -6,7 +6,7 @@
 /*   By: saopaulo42 <saopaulo42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/12 13:56:02 by gariadno          #+#    #+#             */
-/*   Updated: 2020/04/01 16:29:49 by saopaulo42       ###   ########.fr       */
+/*   Updated: 2020/04/01 19:46:03 by saopaulo42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_print_p(t_info *info, t_flags *flags)
 	int		width;
 
 	ptr = ft_itoa_base((size_t)va_arg(info->args, void *), 16, 'a');
-	len = ft_strlen(ptr);
+	len = (*ptr == '0' && flags->precision == 0) ? 0 : ft_strlen(ptr);
 	width = (flags->precision > len) ? flags->precision : len;
 	(flags->precision >= 0 && flags->flag == ZERO) ? flags->flag = -1 : 0;
 	pading = (flags->flag == ZERO) ? ZERO : SPACE;
@@ -28,14 +28,14 @@ void	ft_print_p(t_info *info, t_flags *flags)
 	{
 		ft_putstr(info, "0x");
 		ft_addpads(flags->precision, len, info, ZERO);
-		ft_putstr(info, ptr);
+		(len == 0 && *ptr == ZERO) ? 0 : ft_putstr(info, ptr);
 	}
 	ft_addpads(flags->width - 2, width, info, pading);
 	if (flags->flag != MINUS)
 	{
 		ft_putstr(info, "0x");
 		ft_addpads(flags->precision, len, info, ZERO);
-		ft_putstr(info, ptr);
+		(len == 0 && *ptr == ZERO) ? 0 : ft_putstr(info, ptr);
 	}
 	free(ptr);
 }
