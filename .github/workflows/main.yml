@@ -16,4 +16,6 @@ jobs:
       working-directory: ./pft_2019
     - name: run_test
       run: ./test
+    - name: show_result
+      run:  cat results.txt
       working-directory: ./pft_2019
