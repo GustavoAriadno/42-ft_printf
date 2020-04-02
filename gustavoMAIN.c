@@ -6,7 +6,7 @@
 /*   By: saopaulo42 <saopaulo42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 16:37:00 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/25 20:28:06 by saopaulo42       ###   ########.fr       */
+/*   Updated: 2020/04/01 21:02:15 by saopaulo42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,9 @@ int main()
 		a++;
 	}
    */
-	printf("%d", 0xc0);
-//  printf("len == %d\n",    printf("\n|%*.*d|\n", 10, 5, -42));
-//  printf("len == %d\n", ft_printf("\n|%*.*d|\n", 10, 5, -42));
+	//printf("%d", 0xc0);
+   printf("len == %d\n",    printf("\n|%-*.*d|\n",  -2, -2, -12));
+   printf("len == %d\n", ft_printf("\n|%-*.*d|\n",  -2, -2, -12));
 /*   
    printf(" -T8- Return : %d\n",   printf("|%5i|%5d|%5d|%5d|%5d|%5d|%5d|%5d|\n", i, j, k, l, m, c, e, d)); //T8
 	printf(" -T8- Return : %d\n\n", ft_printf("|%5i|%5d|%5d|%5d|%5d|%5d|%5d|%5d|\n", i, j, k, l, m, c, e, d)); //T8
