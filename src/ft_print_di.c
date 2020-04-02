@@ -6,7 +6,7 @@
 /*   By: saopaulo42 <saopaulo42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/09 16:29:59 by gariadno          #+#    #+#             */
-/*   Updated: 2020/04/01 21:27:27 by saopaulo42       ###   ########.fr       */
+/*   Updated: 2020/04/01 21:44:50 by saopaulo42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,14 @@ static void	ft_putdi(int precision, int len, t_info *info, char *num)
 {
 	int negative;
 
-	negative = (*num == MINUS) ? 1 : 0;
+	negative = 0;
 	if (*num == MINUS)
+	{
 		info->len += ft_putchar(MINUS);
+		negative++;
+	}
 	ft_addpads(precision, len, info, ZERO);
-	(*num == ZERO && precision == 0) ? 0 : ft_putstr(info, num + negative);
+	(precision == 0 && *num == ZERO) ? 0 : ft_putstr(info, num + negative);
 }
 
 void		ft_print_di(t_info *info, t_flags *flags)
@@ -33,7 +36,7 @@ void		ft_print_di(t_info *info, t_flags *flags)
 
 	num = ft_itoa(va_arg(info->args, int));
 	isminus = (*num == MINUS) ? 1 : 0;
-	len = (*num == ZERO && flags->precision == 0) ? 0 : ft_strlen(num);
+	len = (flags->precision == 0 && *num == ZERO) ? 0 : ft_strlen(num);
 	(*num == MINUS && flags->precision > 1) ? flags->precision++ : 0;
 	width = (flags->precision > len) ? flags->precision : len;
 	(flags->flag == ZERO && flags->precision >= 0) ? flags->flag = -1 : 0;
