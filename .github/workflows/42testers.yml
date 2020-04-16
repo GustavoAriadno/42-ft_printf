@@ -1,17 +1,17 @@
 on:
   push:
-	branches: [ master ]
+    branches: [ master ]
   
 jobs:
   build:
 
-	runs-on: macos-latest
+    runs-on: macos-latest
 
-	steps:
-	- uses: actions/checkout@v2
-	- name: make
-	run: make
-	working-directory: ./42TESTERS-PRINTF/srcs
-	- name: runtest
-	run: bash ./runtest.sh
-	working-directory: ./42TESTERS-PRINTF
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+    run: make
+    working-directory: ./42TESTERS-PRINTF/srcs
+    - name: runtest
+    run: bash ./runtest.sh
+    working-directory: ./42TESTERS-PRINTF
