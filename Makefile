@@ -6,13 +6,13 @@
 #    By: saopaulo42 <saopaulo42@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/12 15:44:42 by gariadno          #+#    #+#              #
-#    Updated: 2020/04/25 12:31:49 by saopaulo42       ###   ########.fr        #
+#    Updated: 2020/04/25 12:39:46 by saopaulo42       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	libftprintf.a
 
-LIB		=	libft.a
+LIB		=	libft/libft.a
 
 SRC_DIR	=	./src/
 
