@@ -12,7 +12,9 @@
 
 NAME	=	libftprintf.a
 
-LIB		=	libft/libft.a
+LIB_DIR =	./libft
+
+LIB	=	$(LIB_DIR)/libft.a
 
 SRC_DIR	=	./src/
 
@@ -60,7 +62,7 @@ $(NAME)	:	$(LIB) $(OBJ)
 
 $(LIB)	:	
 			$(MAKE) -C $(LIB_DIR)
-			cp $(LIB_DIR)/$(LIB) $(NAME)
+			cp $(LIB) $(NAME)
 
 clean	:
 			$(MAKE) clean -C $(LIB_DIR)
