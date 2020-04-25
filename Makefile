@@ -6,7 +6,7 @@
 #    By: saopaulo42 <saopaulo42@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/12 15:44:42 by gariadno          #+#    #+#              #
-#    Updated: 2020/03/31 19:15:35 by saopaulo42       ###   ########.fr        #
+#    Updated: 2020/04/25 12:31:49 by saopaulo42       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,24 +52,11 @@ SRC_OB	=	$(SRC_DIR)ft_print_percent.o	\
 
 OBJ		=	$(SRC:.c=.o)
 
-RE_OBJ	=	$(OBJ_DIR)/ft_print_percent.o	\
-			$(OBJ_DIR)/ft_print_di.o		\
-			$(OBJ_DIR)/ft_print_c.o			\
-			$(OBJ_DIR)/ft_print_u.o			\
-			$(OBJ_DIR)/ft_print_x.o			\
-			$(OBJ_DIR)/ft_print_s.o			\
-			$(OBJ_DIR)/ft_print_p.o			\
-			$(OBJ_DIR)/ft_printf.o			\
-			$(OBJ_DIR)/ft_addpads.o			\
-			$(OBJ_DIR)/ft_itoa_base.o		\
-			$(OBJ_DIR)/ft_putchr.o			\
-			$(OBJ_DIR)/ft_putstr.o
 
 all		:	$(NAME)
 
 $(NAME)	:	$(LIB) $(OBJ)
-			mv $(SRC_OB) $(OBJ_DIR)
-			ar rcs $(NAME) $(RE_OBJ)
+			ar rcs $(NAME) $(SRC_OB)
 
 $(LIB)	:	
 			$(MAKE) -C $(LIB_DIR)
@@ -77,7 +64,7 @@ $(LIB)	:
 
 clean	:
 			$(MAKE) clean -C $(LIB_DIR)
-			/bin/rm -f $(RE_OBJ)
+			/bin/rm -f $(SRC_OB)
 
 fclean	:	clean
 			$(MAKE) fclean -C $(LIB_DIR)
