@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gariadno <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/20 16:47:20 by gariadno          #+#    #+#             */
-/*   Updated: 2020/01/20 16:55:15 by gariadno         ###   ########.fr       */
+/*   Created: 2020/01/22 11:25:24 by gariadno          #+#    #+#             */
+/*   Updated: 2020/01/27 12:31:19 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+void	*ft_memchr(void *s, int c, unsigned long int n)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
+	unsigned long int	i;
+	char				*str;
+
+	str = (char *)s;
+	i = 0;
+	while (i < n)
+	{
+		if (str[i] == c)
+		{
+			return (&str[i]);
+		}
+		i++;
+	}
 	return (0);
 }

@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gariadno <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/21 11:14:56 by gariadno          #+#    #+#             */
-/*   Updated: 2020/01/30 20:00:27 by gariadno         ###   ########.fr       */
+/*   Created: 2020/01/20 15:09:47 by gariadno          #+#    #+#             */
+/*   Updated: 2020/01/27 14:23:47 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+int	ft_atoi(const char *str)
 {
-	unsigned int	i;
-	char			*str;
+	int	i;
+	int	res;
+	int	signal;
 
-	str = (char *)s;
 	i = 0;
-	while (str[i])
+	res = 0;
+	signal = 1;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+			|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+		i++;
+	if (str[i] == '+' || str[i] == '-')
 	{
-		if (str[i] == c)
-			return (&str[i]);
+		if (str[i] == '-')
+			signal = -1;
 		i++;
 	}
-	if (c == 0)
-		return (&str[i]);
-	return (0);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		res = res * 10 + (str[i] - '0');
+		i++;
+	}
+	res *= signal;
+	return (res);
 }

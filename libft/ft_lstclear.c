@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gariadno <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/20 16:47:20 by gariadno          #+#    #+#             */
-/*   Updated: 2020/01/20 16:55:15 by gariadno         ###   ########.fr       */
+/*   Created: 2020/01/30 14:17:54 by gariadno          #+#    #+#             */
+/*   Updated: 2020/01/31 13:04:10 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+#include "libft.h"
+
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	t_list	*swap;
+
+	if (lst == NULL)
+		return ;
+	swap = (*lst)->next;
+	while ((*lst))
+	{
+		swap = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		(*lst) = swap;
+	}
 }

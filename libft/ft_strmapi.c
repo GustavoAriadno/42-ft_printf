@@ -1,18 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gariadno <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/20 16:47:20 by gariadno          #+#    #+#             */
-/*   Updated: 2020/01/20 16:55:15 by gariadno         ###   ########.fr       */
+/*   Created: 2020/01/27 15:21:28 by gariadno          #+#    #+#             */
+/*   Updated: 2020/01/27 16:11:05 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+#include "libft.h"
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	unsigned int	i;
+	char			*str;
+
+	if (!s)
+		return (NULL);
+	if (!(str = (char *)malloc(ft_strlen(s) + 1)))
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		str[i] = (*f)(i, s[i]);
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }

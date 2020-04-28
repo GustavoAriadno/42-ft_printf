@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gariadno <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/20 16:47:20 by gariadno          #+#    #+#             */
-/*   Updated: 2020/01/20 16:55:15 by gariadno         ###   ########.fr       */
+/*   Created: 2020/02/01 19:33:12 by gariadno          #+#    #+#             */
+/*   Updated: 2020/02/01 19:34:32 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+void	*ft_memccpy(void *dst, const void *src, int c, unsigned long int n)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
+	unsigned int	i;
+	unsigned char	*desty;
+	unsigned char	*ori;
+
+	desty = (unsigned char *)dst;
+	ori = (unsigned char *)src;
+	i = 0;
+	while (i < n && ori[i] != (unsigned char)c)
+	{
+		desty[i] = ori[i];
+		i++;
+	}
+	if (ori[i] == (unsigned char)c)
+	{
+		desty[i] = ori[i];
+		return (&desty[i + 1]);
+	}
 	return (0);
 }

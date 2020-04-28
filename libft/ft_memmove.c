@@ -1,18 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gariadno <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/20 16:47:20 by gariadno          #+#    #+#             */
-/*   Updated: 2020/01/20 16:55:15 by gariadno         ###   ########.fr       */
+/*   Created: 2020/01/22 10:40:09 by gariadno          #+#    #+#             */
+/*   Updated: 2020/01/30 19:54:55 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+#include "libft.h"
+
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	unsigned long int	i;
+	char				*desty;
+	char				*ori;
+
+	if (src == dst)
+		return (dst);
+	desty = (char *)dst;
+	ori = (char *)src;
+	i = 0;
+	if (dst < src)
+		ft_memcpy(dst, src, len);
+	else
+	{
+		while (len--)
+			desty[len] = ori[len];
+	}
+	return (dst);
 }

@@ -3,39 +3,53 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gariadno <gariadno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gariadno <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/12 16:40:30 by gariadno          #+#    #+#             */
-/*   Updated: 2020/03/14 16:20:51 by gariadno         ###   ########.fr       */
+/*   Created: 2020/01/23 17:29:06 by gariadno          #+#    #+#             */
+/*   Updated: 2020/02/01 19:14:47 by gariadno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int nb)
+int		find_len(unsigned int x)
 {
-	unsigned int	num;
-	char			*str;
-	int				minus;
-	int				len;
+	int		len;
 
-	num = (nb < 0) ? -(unsigned int)nb : (unsigned int)nb;
-	minus = (nb < 0) ? 1 : 0;
-	len = (minus == 1) ? 2 : 1;
-	while (num > 9)
+	len = 0;
+	while (x > 9)
 	{
-		num = num / 10;
 		len++;
+		x = x / 10;
 	}
-	num = (nb < 0) ? -(unsigned int)nb : (unsigned int)nb;
-	if (!(str = malloc((len + 1) * sizeof(*str))))
-		return (NULL);
-	str[len] = '\0';
-	while (--len >= minus)
+	return (len);
+}
+
+char	*ft_itoa(int n)
+{
+	int				len;
+	unsigned int	nb;
+	char			*str;
+	int				neg;
+
+	len = 1;
+	neg = 0;
+	nb = n;
+	if (n < 0)
 	{
-		str[len] = num % 10 + '0';
-		num /= 10;
+		nb = n * -1;
+		len++;
+		neg++;
 	}
-	(minus) ? str[len] = '-' : 0;
+	len = len + find_len(nb);
+	if (!(str = (char *)malloc(len + 1)))
+		return (NULL);
+	neg == 1 ? str[0] = '-' : 0;
+	str[len] = '\0';
+	while (--len >= neg)
+	{
+		str[len] = nb % 10 + 48;
+		nb /= 10;
+	}
 	return (str);
 }

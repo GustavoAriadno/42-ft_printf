@@ -3,42 +3,54 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: saopaulo42 <saopaulo42@student.42.fr>      +#+  +:+       +#+         #
+#    By: gariadno <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/03/13 13:20:32 by gariadno          #+#    #+#              #
-#    Updated: 2020/04/25 12:34:54 by saopaulo42       ###   ########.fr        #
+#    Created: 2020/02/01 19:36:49 by gariadno          #+#    #+#              #
+#    Updated: 2020/02/01 19:38:28 by gariadno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	libft.a
+NAME = libft.a
 
-FILES		=	ft_isdigit.c	\
-				ft_strlen.c		\
-				ft_strchr.c		\
-				ft_itoa.c
+FILES = ft_bzero.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c \
+		ft_memmove.c ft_memset.c ft_strchr.c ft_strlcat.c ft_strlcpy.c \
+		ft_strlen.c ft_strrchr.c ft_strnstr.c ft_strncmp.c \
+		ft_atoi.c ft_isalpha.c ft_isdigit.c ft_isalnum.c \
+		ft_isascii.c ft_isprint.c ft_toupper.c ft_tolower.c \
+		ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c \
+		ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c \
+		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
+		ft_putnbr_fd.c ft_lstiter.c ft_lstmap.c
 
-OBJ			=	$(FILES:.c=.o)
+FILES_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
+			ft_lstlast.c ft_lstadd_back.c ft_lstadd_back.c \
+			ft_lstdelone.c ft_lstclear.c
 
-OBJ			=	ft_isdigit.o	\
-				ft_itoa.o	\
-				ft_strlen.o	\
-				ft_strchr.o
+OBJECTS = $(FILES:.c=.o)
 
-CC			=	gcc -c -Wall -Werror -Wextra
+OBJECTS_BONUS = $(FILES_BONUS:.c=.o)
 
-INCLUDES	=	libft.h
+CC = gcc -c -Wall -Werror -Wextra
 
-RM			=	/bin/rm -f
+HEADERS = libft.h
 
-all		:	$(NAME)
+RM = /bin/rm -f
 
-$(NAME)	:	$(OBJ) $(INCLUDES)
-			ar rcs $(NAME) $(OBJ)
+all: $(NAME)
 
-clean	:
-			$(RM) $(OBJ)
+$(NAME): $(OBJECTS)
+	ar rcs $(NAME) $(OBJECTS)
 
-fclean	:	clean
-			$(RM) $(NAME)
+clean:
+	$(RM) $(OBJECTS) $(OBJECTS_BONUS)
 
-re		:	fclean all
+fclean: clean
+	$(RM)  $(NAME)
+
+re: fclean all
+
+bonus: $(OBJECTS) $(OBJECTS_BONUS)
+	ar rcs $(NAME) $(OBJECTS) $(OBJECTS_BONUS)
+
+%.o: %.c
+	$(CC) $< -I $(HEADERS) -o $@
